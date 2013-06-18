@@ -91,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.35" vertical-offset="0" max-vertical-offset="600">
+            <state line="16" column="14" selection-start="271" selection-end="271" vertical-scroll-proportion="0.4088586" vertical-offset="0" max-vertical-offset="587">
               <folding />
             </state>
           </provider>
@@ -648,9 +648,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.35" vertical-offset="0" max-vertical-offset="600">
+        <state line="16" column="14" selection-start="271" selection-end="271" vertical-scroll-proportion="0.4088586" vertical-offset="0" max-vertical-offset="587">
           <folding />
         </state>
       </provider>
