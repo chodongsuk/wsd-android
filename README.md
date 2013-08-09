@@ -132,8 +132,6 @@ Usage
 		if (!gps.canGetLocation()) gps.showSettingsAlert();
 	}
 
-Add the
-
 ## TODO
 
 * Update documentation with examples of each helper
@@ -143,6 +141,7 @@ Add the
 ## Changelog
 
 **0.3**
+- Updated Readme
 - Removed gradle implementation because the Android Studio was too inmature to develop in it
 - Added Eclipse project
 - Added List implementation
