@@ -24,6 +24,18 @@ public class WSDBaseAdapter extends BaseAdapter implements View.OnClickListener 
     public View mProgressBar;
 
     public WSDBaseAdapter(WSDListImplementation listImplementation, View progressBar, boolean loadDataOnCreate) {
+    	init(listImplementation, progressBar, loadDataOnCreate);
+    }
+    
+    public WSDBaseAdapter(WSDListImplementation listImplementation, View progressBar) {
+    	init(listImplementation, progressBar, true);
+    }
+    
+    public WSDBaseAdapter(WSDListImplementation listImplementation) {
+    	init(listImplementation, null, true);
+    }
+    
+    private void init(WSDListImplementation listImplementation, View progressBar, boolean loadDataOnCreate) {
     	mListImplementation = listImplementation;
         mList = new ArrayList<WSDListItem>();
         mListAll = new ArrayList<WSDListItem>();
@@ -92,6 +104,10 @@ public class WSDBaseAdapter extends BaseAdapter implements View.OnClickListener 
     
     public void reload() {
     	showLoading();
+    	mListImplementation.getData(this);
+    }
+    
+    public void backgroundReload() {
     	mListImplementation.getData(this);
     }
 

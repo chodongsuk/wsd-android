@@ -10,8 +10,9 @@ import android.widget.ImageView;
 
 import com.applidium.shutterbug.utils.ShutterbugManager;
 import com.applidium.shutterbug.utils.ShutterbugManager.ShutterbugManagerListener;
+import com.wsd.android.display.WSDImageInterface;
 
-public class FetchableImageView extends ImageView implements ShutterbugManagerListener {
+public class FetchableImageView extends ImageView implements ShutterbugManagerListener, WSDImageInterface {
     public interface FetchableImageViewListener {
         void onImageFetched(Bitmap bitmap, String url);
 
