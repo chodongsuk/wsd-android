@@ -140,6 +140,10 @@ Usage
 
 ## Changelog
 
+**0.3.1**
+- Some Enhancements
+- Added backgroundReload to List adapter
+
 **0.3**
 - Updated Readme
 - Removed gradle implementation because the Android Studio was too inmature to develop in it
@@ -152,7 +156,7 @@ Usage
 - Added Date humanization utility
 - Added Dialog utility
 - Added Call utility
-- Added remote image loader with caching (Thanks to (Shutterbug)[https://github.com/applidium/Shutterbug])
+- Added remote image loader with caching (Thanks to [Shutterbug](https://github.com/applidium/Shutterbug))
 
 **0.1**
 Initial Commit
