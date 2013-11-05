@@ -1,5 +1,7 @@
 package com.wsd.android.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -21,5 +23,16 @@ public class WSDDate {
 		}
 		
 		return p.format(date);
+	}
+	
+	public static String humanize(String date) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss", new Locale("es", "ES"));
+		try {
+			return humanize(format.parse(date));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return "";
 	}
 }

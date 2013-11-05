@@ -3,6 +3,8 @@ package com.wsd.android.list;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.wsd.android.utils.WSDDate;
+
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -13,6 +15,7 @@ import android.widget.TextView;
  */
 public class WSDBaseAdapterHolder {
     private Map<String, TextView> mTextView;
+    private Map<String, TextView> mDateView;
     private Map<String, RatingBar> mRatingBar;
     private Map<String, ImageView> mImageView;
     private Map<String, Drawable> mPlaceHolder;
@@ -22,6 +25,7 @@ public class WSDBaseAdapterHolder {
     	mImageView = new HashMap<String, ImageView>();
     	mPlaceHolder = new HashMap<String, Drawable>();
     	mTextView = new HashMap<String, TextView>();
+    	mDateView = new HashMap<String, TextView>();
     	mRatingBar = new HashMap<String, RatingBar>();
     }
     
@@ -29,6 +33,12 @@ public class WSDBaseAdapterHolder {
         if (textView == null) return;
 
         mTextView.put(field, textView);
+    }
+    
+    public void setDateView(String field, TextView textView) {
+        if (textView == null) return;
+
+        mDateView.put(field, textView);
     }
 
     public RatingBar getRatingBar(String field) {
@@ -52,9 +62,19 @@ public class WSDBaseAdapterHolder {
         return mTextView.get(field);
     }
     
+    public TextView getDateView(String field) {
+        if (!mDateView.containsKey(field)) return null;
+        return mDateView.get(field);
+    }
+    
     public void setText(String field, String text) {
     	if (getTextView(field) == null) return;
     	getTextView(field).setText(text);
+    }
+    
+    public void setDate(String field, String text) {
+    	if (getDateView(field) == null) return;
+    	getDateView(field).setText(WSDDate.humanize(text));
     }
 
     public void setImageView(ImageView imageView) {
@@ -86,6 +106,11 @@ public class WSDBaseAdapterHolder {
         for (String field : mTextView.keySet()) {
         	if (item.get(field) == null) continue;
         	setText(field, (String)item.get(field));
+        }
+        
+        for (String field : mDateView.keySet()) {
+        	if (item.get(field) == null) continue;
+        	setDate(field, (String)item.get(field));
         }
         
         for (String field : mRatingBar.keySet()) {

@@ -141,12 +141,14 @@ public class WSDBaseAdapter extends BaseAdapter implements View.OnClickListener 
             holder = new WSDBaseAdapterHolder();
             
             for (WSDListField field : mListImplementation.getFields()) {
-            	if (field.getType() == WSDListField.TYPE_IMAGE) {
+            	if (field.getType() == WSDListField.TYPE.IMAGE) {
             		holder.setImageView(field.getKey(), (ImageView)view.findViewById(field.getValue()), field.getPlaceHolder());
-            	} else if (field.getType() == WSDListField.TYPE_RATING) {
+            	} else if (field.getType() == WSDListField.TYPE.RATING) {
             		holder.setRatingBar(field.getKey(), (RatingBar)view.findViewById(field.getValue()));
-            	} else if (field.getType() == WSDListField.TYPE_TEXT) {
+            	} else if (field.getType() == WSDListField.TYPE.TEXT) {
             		holder.setTextView(field.getKey(), (TextView)view.findViewById(field.getValue()));
+            	} else if (field.getType() == WSDListField.TYPE.DATE) {
+            		holder.setDateView(field.getKey(), (TextView)view.findViewById(field.getValue()));
             	}
             }
 

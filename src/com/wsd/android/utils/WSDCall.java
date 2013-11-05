@@ -38,7 +38,7 @@ public class WSDCall {
 					convertView = inflater.inflate(android.R.layout.simple_list_item_1, null);
 					
 					holder = new ViewHolder();
-					holder.title = (TextView) convertView.findViewById(android.R.id.title);
+					holder.title = (TextView) convertView.findViewById(android.R.id.text1);
 					convertView.setTag(holder);
 				} else {
 					holder = (ViewHolder) convertView.getTag();

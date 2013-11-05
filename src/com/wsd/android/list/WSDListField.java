@@ -3,16 +3,19 @@ package com.wsd.android.list;
 import android.graphics.drawable.Drawable;
 
 public class WSDListField {
-	public static int TYPE_TEXT = 0;
-	public static int TYPE_IMAGE = 1;
-	public static int TYPE_RATING = 2;
+	public static enum TYPE {
+		TEXT,
+		IMAGE,
+		RATING,
+		DATE,
+	}
 	
 	private String mKey;
 	private int mValue;
-	private int mType;
+	private TYPE mType;
 	private Drawable mPlaceHolder = null;
 	
-	public WSDListField(String key, int value, int type) {
+	public WSDListField(String key, int value, TYPE type) {
 		mKey = key;
 		mValue = value;
 		mType = type;
@@ -21,7 +24,7 @@ public class WSDListField {
 	public WSDListField(String key, int value, Drawable placeHolder) {
 		mKey = key;
 		mValue = value;
-		mType = TYPE_IMAGE;
+		mType = TYPE.IMAGE;
 		mPlaceHolder = placeHolder;
 	}
 	
@@ -33,7 +36,7 @@ public class WSDListField {
 		return mValue;
 	}
 	
-	public int getType() {
+	public TYPE getType() {
 		return mType;
 	}
 	
